@@ -10,9 +10,13 @@ The backend includes a lightweight storage layer that supports two modes:
 Configure via environment variables:
 - DATA_PERSIST = memory | file (default: memory)
 - DATA_DIR = directory path for JSON snapshots when using file mode (default: ./data)
+- PORT = backend port (default: 3001)
+- JWT_SECRET = secret used for signing JWTs
+- REACT_APP_FRONTEND_URL = CORS allowed origin
+- REACT_APP_LOG_LEVEL = set to 'silent' to disable request logs
 
 On first boot, the service seeds:
 - a small catalog of demo products
-- one admin user (email: admin@example.com, passwordHash: demo-hash)
+- one admin user (email: admin@example.com, password: admin)
 
-Note: Authentication is not implemented yet; passwordHash is a placeholder for demo only.
+API routes are available under /api/* with Swagger docs at /docs.
